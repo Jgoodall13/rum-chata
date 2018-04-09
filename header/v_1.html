@@ -99,7 +99,7 @@ $(document).ready(function(){
 
 function getAge(day, month, year) {
     var today = new Date();
-    var birthDate = new Date(`${day}/${month}/${year}`);
+    var birthDate = new Date(day + '/' + month + '/' + year);
     if (birthDate == 'Invalid Date'){
         return -1;
     }
