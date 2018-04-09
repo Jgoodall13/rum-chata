@@ -23,3 +23,23 @@ body{
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
 }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* webkit solution */
+::-webkit-input-placeholder { text-align:center; }
+/* mozilla solution */
+input:-moz-placeholder { text-align:center; }
+
+.age-display{
+    height: 100px;
+    width: 110px;
+}
+
+div#age-gate {
+    text-align: center;
+}
