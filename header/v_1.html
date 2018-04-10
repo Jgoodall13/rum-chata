@@ -1,70 +1,189 @@
 <style>
+
+    /*********************MODAL STUFF!!***********************/
     #myModal{
         z-index: 999;
+    }
+    .modal {
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(34,161,212); /* Fallback color */
+        background-color: rgba(34,161,212,0.6); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 3% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
+    }
+
+    /****Error Handeling****/
+    #error-young, #error-date, #error-check{
+        color: red;
+        display: none;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+    }
+
+    /* webkit solution */
+    ::-webkit-input-placeholder { text-align:center; }
+    /* mozilla solution */
+    input:-moz-placeholder { text-align:center; }
+
+    .age-display{
+        height: 100px;
+        width: 110px;
+        border: none;
+        background-color: #efece6;
+        color: #bea565;
+        transition: 500ms;
+        outline: none;
+    }
+    .age-display:focus{
+        border: 2px solid #efece6;;
+        background-color: #fff;
+    }
+
+    div#age-gate {
+        text-align: center;
+    }
+    .cookie-box{
+        display: flex;
+        justify-content: center;
+    }
+    input[type=checkbox], input[type=radio]{
+        margin: 17px 8px 0;
+    }
+    input[type="number"] {
+        text-align: center;
+    }
+    .cookie-legal{
+        font-size: 10px;
+        line-height: 18px;
+        margin-bottom: 40px;
+        margin-left: 8%;
+        margin-right: 8%;
+        font-family: Futura-light;
+    }
+    button#age-btn {
+        background-color: #bea565;
+        border: 2px solid #bea565;
+        color: white;
+        padding: 0px 10px;
+        font-size: 45px;
+        position: absolute;
+        left: 40%;
+        margin-top: -15px;
+    }
+    button#age-btn:hover{
+        background-color: white;
+        border: 2px solid #bea565;
+        color: #bea565;
+    }
+    .futura{
+        font-family: Futura;
+    }
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #bea565;
+        opacity: 1; /* Firefox */
+    }
+
+    /**********************ACTUAL HEADER STUFF**************************/
+    div#header-wrapper {
+        border-top: 3px solid #bea565;
     }
     .head-navigation{
         text-align: right;
     }
-    .modal {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+    form#search_form {
+        display: flex;
+        justify-content: flex-end;
+    }
+    #search-bar{
+        width: 235px;
+        border: 1px solid #bea565;
+        background-color: transparent;
+    }
+    #search-bar:focus{
+        padding-left: 5px;
+        outline: none;
+    }
+    #sign-in-link, #cart-link{
+        color: black;
+        font-family: Futura-bold;
+        font-size: 20px;
+    }
+    a#sign-in-link {
+        padding-right: 44px;
+    }
+    #search-submit{
+        background-color: transparent;
+        border: 1px solid #bea565;
+    }
 
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
+    @media(max-width: 1366px){
+        button#age-btn{
+            left: 36%;
+        }
+    }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
-/* webkit solution */
-::-webkit-input-placeholder { text-align:center; }
-/* mozilla solution */
-input:-moz-placeholder { text-align:center; }
-
-.age-display{
-    height: 100px;
-    width: 110px;
-}
-
-div#age-gate {
-    text-align: center;
-}
 </style>
 
 <div id='header-wrapper'>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-8">
                 rum
             </div>
-            <div class="col-sm-6 head-navigation">
+            <div class="col-sm-4 head-navigation">
                 <div class="acount-stuff">
-                    <a href="">Sign in</a>
-                    <a href="">icon Shopping Cart ()</a>
+                    <a id="sign-in-link" href="/account.jhtm">SIGN IN</a>
+                    <a id="cart-link" href="/viewCart.jhtm">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="cart_info">SHOPPING CART (#cartItems#)</span>
+                    </a>
                 </div>
                 <div class="searching-around">
-                    serachbar
+                    <form id="search_form" action="/lsearch.jhtm" method="post">
+                            <input id="search-bar" type="text" name="keywords" placeholder="Search..." >
+                            <button id="search-submit" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- 
+<div class="col-md-4 head-right">
+        <form id="search_form" action="/lsearch.jhtm" method="post">
+            <div class="input-group">
+                <input type="text" class="form-control" name="keywords" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+        <div class="cart-info">
+            <a href="/viewCart.jhtm">
+            <span class="cart_info">Cart (#cartItems#)</span>
+            <i class="fa fa-shopping-cart"></i>
+            </a>
+        </div>
+    </div> -->
+
 
 <script>
 var modal = $('#myModal');
@@ -78,14 +197,20 @@ $(document).ready(function(){
         var year = $('input:nth-child(3)').val()
         var age = getAge(month, day, year);
         if(age == -1){
-            alert('invalid. Please enter valid date.')
+            $('#error-date').css('display', 'block')
+            $('#error-young').css('display', 'none')
         } else if(age >= 21){
-            alert('nice, you can drink')
-            access = true;
-            $('#myModal').css('display', 'none');
-            setCookie('ageVerified', 'true', 1)
+            if($('#check-agree:checkbox:checked').length == 0){
+                 $('#error-check').css('display', 'block');
+                 $('#error-young').css('display', 'none');
+                 $('#error-date').css('display', 'none')
+            } else {
+                $('#myModal').css('display', 'none');
+                setCookie('ageVerified', 'true', 1)
+            }
         } else {
-            alert('sorry bub. too young')
+            $('#error-young').css('display', 'block')
+            $('#error-date').css('display', 'none')
         }
     })
     $(document).keypress(function(e){
