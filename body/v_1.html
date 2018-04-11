@@ -11,13 +11,24 @@
     .breadcrumb{
         display: none;
     }
+    #banner_slider {
+        margin-bottom: 30px;
+        margin-top: 36px;
+    }
+    .cta-text{
+        position: absolute;
+        z-index: 999;
+    }
+    .fa-angle-left:before, .fa-angle-right:before {
+        color: white;
+    }
 </style>
 
 <div id="myModal" class="modal">
     <div class="modal-content">
         <div id="age-gate">
             <div class="welcome-img">
-                <img src="/assets/img/rumChata/welcome.png" alt="welcome">
+                <img src="/assets/img/rumChata/welcome.png" alt="welcome" id="welcome-age-gate">
             </div>
             <div class="inner center">
                 <h4 class="futura">PLEASE ENTER YOUR DATE OF BIRTH</h4>
@@ -44,12 +55,22 @@
     </div>
 </div>
 
-<div id="banner_slider" class="owl-carousel banner_slider_theme">
-        <div id="slide_1" class="slide">
-            <img src="/assets/Templates/79/img/banner/banner_1.jpg" class="slide_image img-responsive center-block">
-            <div class="container">
-                <div class="slide_cnt" style="background-image:url('assets/img/banner/banner_1.jpg')">
-                    <h1>WELCOME TO THE RUMCHATA STORE</h1>
+<div id="banner_slider_wrapper">
+        <div class="row gutter-0">
+            <div class="col-sm-12">
+                <div id="banner_slider" class="banner_slider_theme owl-carousel">
+                    <div class="slide_item slide-one" data-hash="slide1">
+                        <h1 class="cta-text">WELCOME TO THE RUMCHATA STORE</h1>
+                        <img src="/assets/img/rumChata/hero_one.png" class="img-responsive">
+                    </div>
+                    <div class="slide_item slide-two" data-hash="slide2">
+                        <h1 class="cta-text">WELCOME TO THE RUMCHATA STORE TWO</h1>
+                        <img src="/assets/img/rumChata/hero_two.png" class="img-responsive">
+                    </div>
+                    <div class="slide_item slide-three" data-hash="slide3">
+                        <h1 class="cta-text">WELCOME TO THE RUMCHATA STORE THREE</h1>
+                        <img src="/assets/img/rumChata/hero_three.png" class="img-responsive">
+                    </div>
                 </div>
             </div>
         </div>

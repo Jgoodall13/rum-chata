@@ -6,6 +6,16 @@
     div#footer_wrapper {
         display: none;
     }
+    #logo-footer{
+        height: 90px;
+        margin-top: 23%;
+    }
+    .nav-link-footer{
+        color: white;
+    }
+    .white-font{
+        color: white;
+    }
 
     /*Global ITEMS*/
     #pageBody{
@@ -20,33 +30,42 @@
     #bread-home{
         color: #bea565;
     }
+    a:focus, a:hover {  
+        color: #bea565; 
+        text-decoration: none; 
+    }
+    ul#footer_social_links{
+        text-align: left;
+    }
 </style>
 <div id="rum-footer">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                Rum
+                <a href="/">
+                    <img src="/assets/img/rumChata/logo.svg" alt="rum" id="logo-footer">
+                </a>
             </div>
             <div class="col-md-3">
-                <h4>CATEGORIES</h4>
-                <a href="">Glassware</a>
-                <a href="">Men</a>
-                <a href="">Women</a>
-                <a href="">Headwear</a>
-                <a href="">Outerwear</a>
-                <a href="">Other Loot</a>
-                <a href="">Recipe Book</a>
+                <h4 class="white-font">CATEGORIES</h4>
+                <a class="nav-link-footer" href="/category/20124/glasswear.html">Glassware</a><br />
+                <a class="nav-link-footer" href="/category/20125/men.html">Men</a><br />
+                <a class="nav-link-footer" href="/category/20126/women.html">Women</a><br />
+                <a class="nav-link-footer" href="/category/20127/headwear.html">Headwear</a><br />
+                <a class="nav-link-footer" href="">Outerwear</a><br />
+                <a class="nav-link-footer" href="/category/20128/otherLoot.html">Other Loot</a><br />
+                <a class="nav-link-footer" href="">Recipe Book</a><br />
             </div>
             <div class="col-md-3">
-                <h4>CUSTOM ITEMS</h4>
-                <p>Can't find what you're looking for? Create a custom order. <a href="">CLICK HERE</a> for more info.</p>
-                <img src="" alt="made with love logo">
+                <h4 class="white-font">CUSTOM ITEMS</h4>
+                <p class="white-font">Can't find what you're looking for? Create a custom order. <a href="" class="white-font">CLICK HERE</a> for more info.</p>
+                <img src="/assets/img/rumChata/love.svg" alt="made with love logo">
             </div>
             <div class="col-md-3">
-                <h4>SUPPORT</h4>
-                <p>000-000-0000</p>
-                <p>9am - 5m CT</p>
-                <a href="mailto:rumchata@overturerpromo.com">rumchata@overturepromo.com</a>
+                <h4 class="white-font">SUPPORT</h4>
+                <p class="white-font">000-000-0000</p>
+                <p class="white-font">9am - 5m CT</p>
+                <a class="white-font" href="mailto:rumchata@overturerpromo.com">rumchata@overturepromo.com</a>
                 <ul id="footer_social_links">
                     <li class="facebook"><a href="https://www.facebook.com/OverturePromotions" target="blank"><span class="fa fa-fw fa-facebook"></span></a></li>
                     <li class="twitter"><a href="https://twitter.com/overturepromo" target="blank"><span class="fa fa-fw fa-twitter"></span></a></li>

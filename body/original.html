@@ -210,33 +210,33 @@
             </div>
         </div>
     </div>
-
     <script type="text/javascript">
         $(function() {
-            $("#banner_slider").owlCarousel({
-                navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-                items: 1,
-                margin: 0,
-                loop: true,
-                nav: true,
-                dots: true,
-                autoplay: true,
-                autoplaySpeed: 1000,
-                navSpeed: 1000,
-                dotsSpeed: 1000,
-                dragEndSpeed: 1000,
-                autoplayTimeout: 5000,
-                responsive:{
-                    0:{
-                        nav: false,
-                        dots: false,
-                    },
-                    768:{
-                        nav: true,
-                        dots: true
-                    }
-                }
-            });
+		$('#banner_slider').owlCarousel({
+			navText: ['<span class="fa fa-angle-left"></span>','<span class="fa fa-angle-right"></span>'],
+			items: 1,
+			margin: 0,
+			nav: true,
+			dots: false,
+			loop: true,
+			rewind: true,
+			autoHeight: false,
+			autoplay: false,
+			autoplaySpeed: 400,
+			navSpeed: 400,
+			dotsSpeed: 400,
+			dragEndSpeed: 400,
+			autoplayTimeout: 5000,
+			responsive: {
+				0: {
+					nav: false
+				},
+				768: {
+					nav: true
+				}
+			}
+		});
+
             $(".products_carousel").owlCarousel({
                 navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
                 margin: 30,

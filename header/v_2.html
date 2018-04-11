@@ -99,6 +99,9 @@
         color: #bea565;
         opacity: 1; /* Firefox */
     }
+    img#welcome-age-gate {
+        width: 100%;
+    }
 
     /**********************ACTUAL HEADER STUFF**************************/
     div#header-wrapper {
@@ -114,7 +117,7 @@
         margin-bottom: 14px;
     }
     #search-bar{
-        width: 235px;
+        width: 205px;
         border: 1px solid #bea565;
         background-color: transparent;
     }
@@ -132,7 +135,7 @@
         font-size: 20px;
     }
     a#sign-in-link {
-        padding-right: 44px;
+        padding-right: 18px;
     }
     #search-submit{
         background-color: transparent;
@@ -145,6 +148,16 @@
     @media(max-width: 1366px){
         button#age-btn{
             left: 36%;
+        }
+    }
+    @media(max-width: 768px){
+        button#age-btn{
+            left: 28%;
+        }
+    }
+    @media(max-width: 468px){
+        button#age-btn{
+            left: 5%;
         }
     }
 
