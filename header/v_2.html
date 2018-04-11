@@ -1,0 +1,264 @@
+<style>
+
+    /*********************MODAL STUFF!!***********************/
+    #myModal{
+        z-index: 999;
+    }
+    .modal {
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(34,161,212); /* Fallback color */
+        background-color: rgba(34,161,212,0.6); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 3% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
+    }
+
+    /****Error Handeling****/
+    #error-young, #error-date, #error-check{
+        color: red;
+        display: none;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+    }
+
+    /* webkit solution */
+    ::-webkit-input-placeholder { text-align:center; }
+    /* mozilla solution */
+    input:-moz-placeholder { text-align:center; }
+
+    .age-display{
+        height: 100px;
+        width: 110px;
+        border: none;
+        background-color: #efece6;
+        color: #bea565;
+        transition: 500ms;
+        outline: none;
+    }
+    .age-display:focus{
+        border: 2px solid #efece6;;
+        background-color: #fff;
+    }
+
+    div#age-gate {
+        text-align: center;
+    }
+    .cookie-box{
+        display: flex;
+        justify-content: center;
+    }
+    input[type=checkbox], input[type=radio]{
+        margin: 17px 8px 0;
+    }
+    input[type="number"] {
+        text-align: center;
+    }
+    .cookie-legal{
+        font-size: 10px;
+        line-height: 18px;
+        margin-bottom: 40px;
+        margin-left: 8%;
+        margin-right: 8%;
+        font-family: Futura-light;
+    }
+    button#age-btn {
+        background-color: #bea565;
+        border: 2px solid #bea565;
+        color: white;
+        padding: 0px 10px;
+        font-size: 45px;
+        position: absolute;
+        left: 40%;
+        margin-top: -15px;
+    }
+    button#age-btn:hover{
+        background-color: white;
+        border: 2px solid #bea565;
+        color: #bea565;
+    }
+    .futura{
+        font-family: Futura;
+    }
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #bea565;
+        opacity: 1; /* Firefox */
+    }
+
+    /**********************ACTUAL HEADER STUFF**************************/
+    div#header-wrapper {
+        border-top: 3px solid #bea565;
+    }
+    .head-navigation{
+        text-align: right;
+    }
+    form#search_form {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 6px;
+        margin-bottom: 14px;
+    }
+    #search-bar{
+        width: 235px;
+        border: 1px solid #bea565;
+        background-color: transparent;
+    }
+    #search-bar:focus{
+        padding-left: 5px;
+        outline: none;
+    }
+    #search-bar::-webkit-input-placeholder{
+        text-align: left;
+        margin-left: 5px;
+    }
+    #sign-in-link, #cart-link{
+        color: black;
+        font-family: Futura-bold;
+        font-size: 20px;
+    }
+    a#sign-in-link {
+        padding-right: 44px;
+    }
+    #search-submit{
+        background-color: transparent;
+        border: 1px solid #bea565;
+    }
+    .acount-stuff {
+        margin-top: 6px;
+    }
+
+    @media(max-width: 1366px){
+        button#age-btn{
+            left: 36%;
+        }
+    }
+
+</style>
+
+<div id='header-wrapper'>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+        
+            </div>
+            <div class="col-sm-4 head-navigation">
+                <div class="acount-stuff">
+                    <a id="sign-in-link" href="/account.jhtm">SIGN IN</a>
+                    <a id="cart-link" href="/viewCart.jhtm">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="cart_info">SHOPPING CART (#cartItems#)</span>
+                    </a>
+                </div>
+                <div class="searching-around">
+                    <form id="search_form" action="/lsearch.jhtm" method="post">
+                            <input id="search-bar" type="text" name="keywords" placeholder="Search..." >
+                            <button id="search-submit" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+var modal = $('#myModal');
+var access = false;
+
+$(document).ready(function(){
+    checkCookie();
+    $('#age-btn').click(function(){
+        var month = $('#age-gate-month').val();
+        var day = $('#age-gate-day').val();
+        var year = $('#age-gate-year').val()
+        var age = getAge(month, day, year);
+        if(age == -1){
+            $('#error-date').css('display', 'block')
+            $('#error-young').css('display', 'none')
+        } else if(age >= 21){
+            if($('#check-agree:checkbox:checked').length == 0){
+                 $('#error-check').css('display', 'block');
+                 $('#error-young').css('display', 'none');
+                 $('#error-date').css('display', 'none')
+            } else {
+                $('#myModal').css('display', 'none');
+                setCookie('ageVerified', 'true', 1)
+            }
+        } else {
+            $('#error-young').css('display', 'block')
+            $('#error-date').css('display', 'none')
+        }
+    })
+    $(document).keypress(function(e){
+        if(e.which == 13){
+            if(access == false){
+                $('#age-btn').click()
+            }
+        }
+    })
+})
+
+function getAge(day, month, year) {
+    var today = new Date();
+    var birthDate = new Date(day + '/' + month + '/' + year);
+    if (birthDate == 'Invalid Date'){
+        return -1;
+    }
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age = age - 1;
+    }
+    return age;
+}
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+
+function checkCookie() {
+    var user=getCookie("ageVerified");
+    if (user != "") {
+        access = true;
+        console.log('we have the right cookie')
+            $('#myModal').css('display', 'none');
+    } else{
+        console.log('We have no cookies')
+        $('#myModal').css('display', 'block');
+    }
+}
+</script>

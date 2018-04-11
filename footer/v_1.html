@@ -6,6 +6,20 @@
     div#footer_wrapper {
         display: none;
     }
+
+    /*Global ITEMS*/
+    #pageBody{
+        background-image: url('/assets/img/rumChata/rc-bg.png');
+    }
+    .breadcrumb{
+        background-image: url('/assets/img/rumChata/rc-bg.png');
+    }
+    h1.category_head_name {
+        display: none;
+    }
+    #bread-home{
+        color: #bea565;
+    }
 </style>
 <div id="rum-footer">
     <div class="container">
@@ -43,3 +57,12 @@
         </div>
     </div>
 </div>
+
+<i id='bread-home' class='fa fa-home'></i>
+
+
+<script>
+    $(document).ready(function(){
+        $('.breadcrumb').prepend($('#bread-home'))
+    })
+</script>

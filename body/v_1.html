@@ -2,6 +2,15 @@
     #popular-items{
         text-align: center;
     }
+    .body-navs {
+        font-family: Breamcatcher;
+        color: #bea565;
+        font-size: 42px;
+        font-weight: normal;
+    }
+    .breadcrumb{
+        display: none;
+    }
 </style>
 
 <div id="myModal" class="modal">
@@ -15,9 +24,9 @@
                 <h6 id="error-young">You must be at least 21 to enter this site</h6>
                 <h4 id="error-date">INVALID DATE</h4>
                 <div id="birthday-field" class="field birthday-field">
-                    <input class='age-display' name="month" type="number" placeholder="MM" maxlength="2" min="1" max="12" required>
-                    <input class='age-display' name="day" type="number" placeholder="DD" maxlength="2" min="1" max="31" required>
-                    <input class='age-display' name="year" type="number" placeholder="YYYY" maxlength="4" min="1900" max="2016" required>
+                    <input id="age-gate-month" class='age-display' name="month" type="number" placeholder="MM" maxlength="2" min="1" max="12" required>
+                    <input id="age-gate-day" class='age-display' name="day" type="number" placeholder="DD" maxlength="2" min="1" max="31" required>
+                    <input id="age-gate-year" class='age-display' name="year" type="number" placeholder="YYYY" maxlength="4" min="1900" max="2016" required>
                 </div>
                 <div class="cookies-detail">
                     <div class="cookie-box">
@@ -40,10 +49,7 @@
             <img src="/assets/Templates/79/img/banner/banner_1.jpg" class="slide_image img-responsive center-block">
             <div class="container">
                 <div class="slide_cnt" style="background-image:url('assets/img/banner/banner_1.jpg')">
-                    <p>MIX ASSORTING CLOTHING</p>
-                    <h1>TITLE HERE</h1>
-                    <p>APPAREL, SHOES, ACCESSORIES .........</p>
-                    <a href="#" class="btn btn_blue mt-20">SHOP NOW</a>
+                    <h1>WELCOME TO THE RUMCHATA STORE</h1>
                 </div>
             </div>
         </div>
@@ -51,7 +57,7 @@
 
     <div id="popular-items">
         <div class="container">
-            <h2>POPULAR ITEMS</h2>
+            <h2 class="body-navs">POPULAR ITEMS</h2>
             <div class="row">
                 <div class="col-md-3">
                     <img src="" alt="coffee">
@@ -78,7 +84,7 @@
     </div>
 
     <div class="container">
-        <h3 class="section_title_2">RECENTLY ADDED</h3>
+        <h2 class="section_title_2 body-navs">NEW ARRIVALS</h2>
         <div class="products_carousel_wrapper">
             <div class="products_carousel owl-carousel">
                 <div class="product">
