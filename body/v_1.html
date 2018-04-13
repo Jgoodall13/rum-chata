@@ -21,6 +21,53 @@
     }
     .fa-angle-left:before, .fa-angle-right:before {
         color: white;
+        font-size: 1.5em;
+    }
+    #little-arrow-left.fa-angle-left:before, #little-arrow-right.fa-angle-right:before{
+        font-size: .9em;
+        color: #bea565;
+    }
+    .pop-items{
+        width: 250px;
+        height: 250px;
+    }
+    .pop-items:hover{
+        opacity: 0.5;
+    }
+    .products_carousel .product{
+        border: none;
+        box-shadow: none;
+    }
+    .five-price{
+        margin-top: 0;
+        margin-bottom: 30px;
+        line-height: .8;
+        color: black;
+    }
+    .four-price{
+        margin-bottom: 0;
+        margin-top: 5px;
+        font-family: Futura-bold;
+        font-size: 20px;
+        color: black;
+    }
+    .four-price:hover, .five-price:hover, .pop-items:hover ~ .four-price, .pop-items:hover ~ .five-price{
+        color: #bea565;
+    }
+    .section_title_2{
+        margin-bottom: 0;
+    }
+    .products_carousel .product:hover .product_name, .products_carousel .product:hover .product_name a{
+        color: black;
+    }
+    .products_carousel .product .product_name, .products_carousel .product .product_name a{
+        line-height: 1.1;
+        font-family: Futura-bold;
+        font-size: 20px;
+        color: black;
+    }
+    .products_carousel .product .product_name, .products_carousel .product .product_name a:hover{
+        color: #bea565;
     }
 </style>
 
@@ -81,24 +128,32 @@
             <h2 class="body-navs">POPULAR ITEMS</h2>
             <div class="row">
                 <div class="col-md-3">
-                    <img src="" alt="coffee">
-                    <h4>COFFEE MUG</h4>
-                    <h5>$5.00</h5>
+                    <a href="#">
+                    <img src="/assets/img/rumChata/home_mug.png" alt="coffee" class="pop-items">
+                    <h4 class="four-price">COFFEE MUG</h4>
+                    <h5 class="five-price">$5.00</h5>
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <img src="" alt="sandals">
-                    <h4>SANDALS</h4>
-                    <h5>$23.00</h5>
+                    <a href="#">
+                    <img src="/assets/img/rumChata/home_sandals.png" alt="sandals" class="pop-items">
+                    <h4 class="four-price">SANDALS</h4>
+                    <h5 class="five-price">$23.00</h5>
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <img src="" alt="cap">
-                    <h4>CONTRASTING STICK CAP</h4>
-                    <h5>$12.00</h5>
+                    <a href="#">
+                    <img src="/assets/img/rumChata/home_hat.png" alt="cap" class="pop-items">
+                    <h4 class="four-price">CONTRASTING STICK CAP</h4>
+                    <h5 class="five-price">$12.00</h5>
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <img src="" alt="ladies tank">
-                    <h4>LADIES TANK TOP </h4>
-                    <h5>$14.00</h5>
+                    <a href="#">
+                    <img src="/assets/img/rumChata/home_shirt.png" alt="ladies tank" class="pop-items">
+                    <h4 class="four-price">LADIES TANK TOP </h4>
+                    <h5 class="five-price">$14.00</h5>
+                    </a>
                 </div>
             </div>
         </div>
@@ -110,7 +165,31 @@
             <div class="products_carousel owl-carousel">
                 <div class="product">
                     <div class="product_image_div">
-                        <a href="#"><img class="item" src="/assets/Templates/79/img/products/1.jpg"></a>
+                        <a href="#"><img class="item" src="/assets/img/rumChata/newarrivals_1_v2.png"></a>
+                    </div>
+                    <div class="product_info_div">
+                        <div class="product_name"><a href="#">BEACH WEAR TANK<br />$12.00</a></div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product_image_div">
+                        <a href="#"><img class="item" src="/assets/img/rumChata/newarrivals_2_v2.png"></a>
+                    </div>
+                    <div class="product_info_div">
+                        <div class="product_name"><a href="#">RUMCHATA WOODEN SIGN<br />$40.00</a></div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product_image_div">
+                        <a href="#"><img class="item" src="/assets/img/rumChata/newarrivals_3_v2.png"></a>
+                    </div>
+                    <div class="product_info_div">
+                        <div class="product_name"><a href="#">RUMCHATA CEREAL SHOOTERS 2oz<br />$7.00</a></div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product_image_div">
+                        <a href="#"><img class="item" src="/assets/img/rumChata/newarrivals_1_v2.png"></a>
                     </div>
                     <div class="product_info_div">
                         <div class="product_name"><a href="#">Product Name</a></div>
@@ -118,7 +197,7 @@
                 </div>
                 <div class="product">
                     <div class="product_image_div">
-                        <a href="#"><img class="item" src="/assets/Templates/79/img/products/2.jpg"></a>
+                        <a href="#"><img class="item" src="/assets/img/rumChata/newarrivals_2.png"></a>
                     </div>
                     <div class="product_info_div">
                         <div class="product_name"><a href="#">Product Name</a></div>
@@ -126,31 +205,7 @@
                 </div>
                 <div class="product">
                     <div class="product_image_div">
-                        <a href="#"><img class="item" src="/assets/Templates/79/img/products/3.jpg"></a>
-                    </div>
-                    <div class="product_info_div">
-                        <div class="product_name"><a href="#">Product Name</a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="product_image_div">
-                        <a href="#"><img class="item" src="/assets/Templates/79/img/products/1.jpg"></a>
-                    </div>
-                    <div class="product_info_div">
-                        <div class="product_name"><a href="#">Product Name</a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="product_image_div">
-                        <a href="#"><img class="item" src="/assets/Templates/79/img/products/2.jpg"></a>
-                    </div>
-                    <div class="product_info_div">
-                        <div class="product_name"><a href="#">Product Name</a></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="product_image_div">
-                        <a href="#"><img class="item" src="/assets/Templates/79/img/products/3.jpg"></a>
+                        <a href="#"><img class="item" src="/assets/img/rumChata/newarrivals_3.png"></a>
                     </div>
                     <div class="product_info_div">
                         <div class="product_name"><a href="#">Product Name</a></div>

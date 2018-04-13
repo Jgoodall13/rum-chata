@@ -1,0 +1,228 @@
+<style>
+        #popular-items{
+            text-align: center;
+        }
+        .body-navs {
+            font-family: Breamcatcher;
+            color: #bea565;
+            font-size: 42px;
+            font-weight: normal;
+        }
+        .breadcrumb{
+            display: none;
+        }
+        #banner_slider {
+            margin-bottom: 30px;
+            margin-top: 36px;
+        }
+        .cta-text{
+            position: absolute;
+            z-index: 999;
+        }
+        .fa-angle-left:before, .fa-angle-right:before {
+            color: white;
+            font-size: 1.5em;
+        }
+        #little-arrow-left.fa-angle-left:before, #little-arrow-right.fa-angle-right:before{
+            font-size: .9em;
+            color: #bea565;
+        }
+        .pop-items{
+            width: 250px;
+            height: 250px;
+        }
+        .pop-items:hover{
+            opacity: 0.5;
+        }
+        .products_carousel .product{
+            border: none;
+            box-shadow: none;
+        }
+        .five-price{
+            margin-top: 0;
+            margin-bottom: 30px;
+            line-height: .8;
+            color: black;
+            text-align: center;
+        }
+        .four-price{
+            margin-bottom: 0;
+            margin-top: 5px;
+            font-family: Futura-bold;
+            font-size: 20px;
+            color: black;
+            text-align: center;
+        }
+        .four-price:hover, .five-price:hover, .pop-items:hover ~ .four-price, .pop-items:hover ~ .five-price{
+            color: #bea565;
+        }
+        .section_title_2{
+            margin-bottom: 0;
+        }
+        .products_carousel .product:hover .product_name, .products_carousel .product:hover .product_name a{
+            color: black;
+        }
+        .products_carousel .product .product_name, .products_carousel .product .product_name a{
+            line-height: 1.1;
+            font-family: Futura-bold;
+            font-size: 20px;
+            color: black;
+        }
+        .products_carousel .product .product_name, .products_carousel .product .product_name a:hover{
+            color: #bea565;
+        }
+        .item:hover ~ .four-price, .item:hover ~ .five-price{
+            color: #bea565;
+        }
+    </style>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div id="age-gate">
+                <div class="welcome-img">
+                    <img src="/assets/img/rumChata/welcome.png" alt="welcome" id="welcome-age-gate">
+                </div>
+                <div class="inner center">
+                    <h4 class="futura">PLEASE ENTER YOUR DATE OF BIRTH</h4>
+                    <h6 id="error-young">You must be at least 21 to enter this site</h6>
+                    <h4 id="error-date">INVALID DATE</h4>
+                    <div id="birthday-field" class="field birthday-field">
+                        <input id="age-gate-month" class='age-display' name="month" type="number" placeholder="MM" maxlength="2" min="1" max="12" required>
+                        <input id="age-gate-day" class='age-display' name="day" type="number" placeholder="DD" maxlength="2" min="1" max="31" required>
+                        <input id="age-gate-year" class='age-display' name="year" type="number" placeholder="YYYY" maxlength="4" min="1900" max="2016" required>
+                    </div>
+                    <div class="cookies-detail">
+                        <div class="cookie-box">
+                            <input type="checkbox" id="check-agree"> 
+                            <h4>REMEMBER ME</h4>
+                        </div>
+                        <h6 id="error-check">Please check box</h6>
+                        <p class="cookie-legal">
+                            * By checking "Remember Me" you are agreeing to use cookies detalied in our Privacy Policy and should never do so on a shared computer. Upon entry you are also agreeing to Agave Loco LL'c Terms and Conditions.
+                        </p>
+                    </div>
+                    <button type="submit" id="age-btn" class="futura">ENTER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="banner_slider_wrapper">
+            <div class="row gutter-0">
+                <div class="col-sm-12">
+                    <div id="banner_slider" class="banner_slider_theme owl-carousel">
+                        <div class="slide_item slide-one" data-hash="slide1">
+                            <h1 class="cta-text">WELCOME TO THE RUMCHATA STORE</h1>
+                            <img src="/assets/img/rumChata/hero_one.png" class="img-responsive">
+                        </div>
+                        <div class="slide_item slide-two" data-hash="slide2">
+                            <h1 class="cta-text">WELCOME TO THE RUMCHATA STORE TWO</h1>
+                            <img src="/assets/img/rumChata/hero_two.png" class="img-responsive">
+                        </div>
+                        <div class="slide_item slide-three" data-hash="slide3">
+                            <h1 class="cta-text">WELCOME TO THE RUMCHATA STORE THREE</h1>
+                            <img src="/assets/img/rumChata/hero_three.png" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="popular-items">
+            <div class="container">
+                <h2 class="body-navs">POPULAR ITEMS</h2>
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <a href="#">
+                        <img src="/assets/img/rumChata/home_mug.png" alt="coffee" class="pop-items">
+                        <h4 class="four-price">COFFEE MUG</h4>
+                        <h5 class="five-price">$5.00</h5>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <a href="#">
+                        <img src="/assets/img/rumChata/home_sandals.png" alt="sandals" class="pop-items">
+                        <h4 class="four-price">SANDALS</h4>
+                        <h5 class="five-price">$23.00</h5>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <a href="#">
+                        <img src="/assets/img/rumChata/home_hat.png" alt="cap" class="pop-items">
+                        <h4 class="four-price">CONTRASTING STICK CAP</h4>
+                        <h5 class="five-price">$12.00</h5>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <a href="#">
+                        <img src="/assets/img/rumChata/home_shirt.png" alt="ladies tank" class="pop-items">
+                        <h4 class="four-price">LADIES TANK TOP </h4>
+                        <h5 class="five-price">$14.00</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <h2 class="section_title_2 body-navs">NEW ARRIVALS</h2>
+            <div class="products_carousel_wrapper">
+                <div class="products_carousel owl-carousel">
+                    <div class="product">
+                        <div class="product_image_div">
+                            <a href="#">
+                            <img class="item" src="/assets/img/rumChata/newarrivals_1_v2.png">
+                            <h4 class='four-price'>BEACH WEAR TANK</h4>
+                            <h5 class="five-price">#12.00</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product_image_div">
+                            <a href="#">
+                            <img class="item" src="/assets/img/rumChata/newarrivals_2_v2.png">
+                            <h4 class='four-price'>RUMCHATA WOODEN SIGN</h4>
+                            <h5 class="five-price">#40.00</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product_image_div">
+                            <a href="#">
+                            <img class="item" src="/assets/img/rumChata/newarrivals_3_v2.png">
+                            <h4 class='four-price'>RUMCHATA CEREAL SHOOTER 2oz</h4>
+                            <h5 class="five-price">#40.00</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product">
+                            <div class="product_image_div">
+                                <a href="#">
+                                <img class="item" src="/assets/img/rumChata/newarrivals_1_v2.png">
+                                <h4 class='four-price'>BEACH WEAR TANK</h4>
+                                <h5 class="five-price">#12.00</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product_image_div">
+                                <a href="#">
+                                <img class="item" src="/assets/img/rumChata/newarrivals_2_v2.png">
+                                <h4 class='four-price'>RUMCHATA WOODEN SIGN</h4>
+                                <h5 class="five-price">#40.00</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product_image_div">
+                                <a href="#">
+                                <img class="item" src="/assets/img/rumChata/newarrivals_3_v2.png">
+                                <h4 class='four-price'>RUMCHATA CEREAL SHOOTER 2oz</h4>
+                                <h5 class="five-price">#40.00</h5>
+                                </a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    
