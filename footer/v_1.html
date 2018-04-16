@@ -13,6 +13,9 @@
     .nav-link-footer{
         color: white;
     }
+    .nav-link-footer:hover, .click-here:hover, .mail-me:hover{
+        color: #543a87;
+    }
     .white-font{
         color: white;
     }
@@ -47,9 +50,74 @@
     ul#footer_social_links{
         text-align: left;
     }
+
+    /************Category page**********************/
+    #products_wrapper_24 .product_wrapper .product_quick_links, #products_wrapper_24 .product_wrapper .product_sku_wrapper .product_sku, #products_wrapper_24 .product_wrapper .product_price_wrapper .price_title{
+        display: none;
+    }
+    #products_wrapper_24 .product_wrapper{
+        border: none;
+        text-align: center;
+    }
+    #products_wrapper_24 .product_wrapper .product_price_wrapper .price_value{
+        color: black;
+        font-weight: normal;
+    }
+    .pageNavigation{
+        background: transparent;
+    }
+
+    /****************Item Page***************************/
+    #product_details_15 .details_image_box{
+        background: transparent;
+        border: none;
+    }
+    .accordion_box:nth-child(2), .accordion_box:nth-child(3) {
+        display: none;
+    }
+    #floatingPricingSummaryBox, .accordion_heading{
+        display: none;
+    }
+    #product_details_15 .details_desc .addToList_btn_wrapper .addToList_btn, #product_details_15 .details_desc .addToQuote_btn_wrapper .addToQuote_btn{
+        display: none;
+    }
+    #product_details_15 .accordion_wrapper .accordion_box .accordion_collapse .accordion_body, #product_details_15 .accordion_wrapper .accordion_box{
+        border: none;
+    }
+    .configBox_icon {
+        display: none;
+    }
+    .addToCart_btn, .continueShopping_btn, .proceedCheckout_btn, .purchase_btn  {
+        background-image: none;
+        color: white;
+        background-color: #bea565;
+        border-color: #bea565;
+    }
+    .addToCart_btn:hover, .continueShopping_btn:hover, .proceedCheckout_btn:hover, .purchase_btn:hover{
+        background-image: none;
+        color: white;
+        background-color: #bea565;
+        border-color: #bea565;
+    }
+    #product_details_15 .details_desc .configBox_wrapper .configBox_title.has-icon h3{
+        margin-left: -10px;
+        background: transparent;
+    }
+    #product_details_15 .details_desc .total_price_wrapper{
+        display: none;
+    }
+    #product_details_15 .details_desc .addToCart_btn_wrapper .addToCart_btn{
+        margin-left: -100%;
+    }
+
     @media (max-width: 992px){
         #logo-footer{
             margin-top: 5%;
+        }
+    }
+    @media(max-width: 767px){
+        #product_details_15 .details_desc .addToCart_btn_wrapper .addToCart_btn{
+            margin-left: -0;
         }
     }
 </style>
@@ -58,7 +126,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-3">
                 <a href="/">
-                    <img src="/assets/img/rumChata/logo.svg" alt="rum" id="logo-footer">
+                    <img src="/assets/img/rumChata/logo_footer.svg" alt="rum" id="logo-footer">
                 </a>
             </div>
             <div class="col-sm-4 col-md-3">
@@ -73,7 +141,7 @@
             </div>
             <div class="col-sm-4 col-md-3">
                 <h4 class="white-font">CUSTOM ITEMS</h4>
-                <p class="white-font">Can't find what you're looking for? Create a custom order. <a href="" class="white-font">CLICK HERE</a> for more info.</p>
+                <p class="white-font">Can't find what you're looking for? Create a custom order. <a href="" class="white-font click-here">CLICK HERE</a> for more info.</p>
                 <img src="/assets/img/rumChata/love.svg" alt="made with love logo" id="love-logo">
             </div>
             <div class="col-sm-4 col-md-3">
@@ -90,13 +158,15 @@
             </div>
         </div>
     </div>
+    <i id='bread-home' class='fa fa-home'></i>
 </div>
 
-<i id='bread-home' class='fa fa-home'></i>
 
 
 <script>
-    $(document).ready(function(){
-        $('.breadcrumb').prepend($('#bread-home'))
-    })
+        if($('.breadcrumb').length == 0){
+            $('#bread-home').css('display', 'none')
+        } else {
+            $('.breadcrumb').prepend($('#bread-home'))
+        }
 </script>

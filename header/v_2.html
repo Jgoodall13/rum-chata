@@ -75,7 +75,7 @@
         margin-bottom: 40px;
         margin-left: 8%;
         margin-right: 8%;
-        font-family: Futura-light;
+        font-family: Futura;
     }
     button#age-btn {
         background-color: #bea565;
@@ -120,6 +120,7 @@
         width: 205px;
         border: 1px solid #bea565;
         background-color: transparent;
+        padding-left: 5px;
     }
     #search-bar:focus{
         padding-left: 5px;
@@ -128,6 +129,7 @@
     #search-bar::-webkit-input-placeholder{
         text-align: left;
         margin-left: 5px;
+        color: gray;
     }
     #sign-in-link, #cart-link{
         color: black;
@@ -144,6 +146,13 @@
     .acount-stuff {
         margin-top: 6px;
     }
+    .mobile-header{
+        display: none;
+    }
+    #mobile-logo {
+        margin: 25px;
+        max-height: 150px;
+    }
 
     @media(max-width: 1366px){
         button#age-btn{
@@ -153,6 +162,12 @@
     @media(max-width: 768px){
         button#age-btn{
             left: 28%;
+        }
+        .head-navigation{
+            display: none;
+        }
+        .mobile-header{
+            display: block;
         }
     }
     @media(max-width: 468px){
@@ -179,12 +194,20 @@
                 </div>
                 <div class="searching-around">
                     <form id="search_form" action="/lsearch.jhtm" method="post">
-                            <input id="search-bar" type="text" name="keywords" placeholder="Search..." >
+                            <input id="search-bar" type="text" name="keywords" placeholder="Search" >
                             <button id="search-submit" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="container mobile-header">
+    <div class="row">
+        <div class="col-xs-12 small-logo">
+            <a href="/"><img src="/assets/img/rumChata/logo.svg" alt="logo" id="mobile-logo"></a>
+        </div>  
     </div>
 </div>
 
