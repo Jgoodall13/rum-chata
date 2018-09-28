@@ -260,6 +260,7 @@
                 </div>
                 <div class="searching-around">
                     <form id="search_form" action="/lsearch.jhtm" method="post">
+                        <input name="searchIndexedCatId" value="20123" type="hidden" />
                         <input id="search-bar" type="text" name="keywords" placeholder="Search">
                         <button id="search-submit" type="submit">
                             <i class="fa fa-search"></i>
@@ -303,6 +304,7 @@
         </div>
         <div class="searching-around col-xs-12">
             <form id="search_form_mobile" action="/lsearch.jhtm" method="post">
+                <input name="searchIndexedCatId" value="20123" type="hidden" />
                 <input id="search-bar-mobile" type="text" name="keywords" placeholder="Search">
                 <button id="search-submit-mobile" type="submit">
                     <i class="fa fa-search"></i>
@@ -314,7 +316,7 @@
 
 <script>
     //Remove line below when site is ready to launch
-    /*$('body').html('<div class="under-const"><img src="/assets/img/rumChata/UC.jpg" alt="" style="width: 100%;"></div>')*/
+    //$('body').html('<div class="under-const"><img src="/assets/img/rumChata/UC.jpg" alt="" style="width: 100%;"></div>')
 
     var modal = $('#myModal');
     var access = false;
