@@ -41,14 +41,18 @@
                 <input class="form-control innies" type="text" name="crmContact.phone1" placeholder="Phone Number">
                 <textarea class="form-control innies" name="crmContact.description" placeholder="Order Specifications" cols="30" rows="3"></textarea>
                 <br />
+                <label for="uAns" class="control-label">Security Question: What year is it?<sup class="requiredField">*</sup></label>
+                <input class="form-control innies" type="text" id="uAns" name="uAns" required placeholder="example 1999">
                 <input type="hidden" name="formNumber" value="793caec4-d177-4499-bb25-c1ea487afa1d">
-                <input type="hidden" name="returnUrl" value="https://rumchata.overturemarket.com/category/20133/confirmation.html">
+                <input type="hidden" name="returnUrl" value="https://islandstore.rumchata.com/category/20133/custom-items.html">
                 <input type="hidden" name="crmContact.trackcode" value="">
                 <input type="hidden" name="crmContact.leadSource" value="form">
                 <input type="hidden" name="adminEmailSubject" value="RumChata Custom Needs">
                 <input type="hidden" name="groupId" value="">
                 <input type="hidden" name="accountId" value="1">
                 <input type="hidden" name="updateIfExist" value="false">
+                <input type="hidden" value="What year is it?" name="aQuest" placeholder="example 1999">
+                <input type="hidden" value="2018" name="aAns">
                 <button id="submit-btn" type="submit">Submit</button>
             </form>
       </div>
@@ -57,3 +61,21 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    function doCheck() {
+        var allFilled = true;
+        var currentYear = (new Date).getFullYear();
+        if ($("input[name=uAns]").val() == currentYear) {
+            $('.btn btn-default,.pull-right').removeAttr("disabled");
+            allFilled = false;
+            return false;
+        } else {
+            $('.btn btn-default,.pull-right').attr("disabled", "disabled");
+        }
+    }
+
+    $("input[name=uAns]").keyup(function () {
+        doCheck();
+    });
+</script>
