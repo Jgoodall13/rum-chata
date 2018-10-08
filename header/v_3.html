@@ -332,14 +332,14 @@
                 $('#error-date').css('display', 'block')
                 $('#error-young').css('display', 'none')
             } else if (age >= 21) {
-                if ($('#check-agree:checkbox:checked').length == 0) {
-                    $('#error-check').css('display', 'block');
-                    $('#error-young').css('display', 'none');
-                    $('#error-date').css('display', 'none')
-                } else {
+                // if ($('#check-agree:checkbox:checked').length == 0) {
+                //     $('#error-check').css('display', 'block');
+                //     $('#error-young').css('display', 'none');
+                //     $('#error-date').css('display', 'none')
+                // } else {
                     $('#myModal').css('display', 'none');
                     setCookie('ageVerified', 'true', 1)
-                }
+                // }
             } else {
                 $('#error-young').css('display', 'block')
                 $('#error-date').css('display', 'none')
